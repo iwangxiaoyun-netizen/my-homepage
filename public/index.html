@@ -248,6 +248,264 @@
       margin-bottom: 0;
     }
 
+    .visual-section {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .visual-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      min-height: 320px;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .panel-head h3 {
+      margin-bottom: 0;
+      font-size: 19px;
+    }
+
+    .panel-kicker {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .capability-visual {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .radar {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, transparent 0 27%, rgba(49, 95, 140, 0.15) 28% 29%, transparent 30% 49%, rgba(49, 95, 140, 0.15) 50% 51%, transparent 52% 70%, rgba(49, 95, 140, 0.2) 71% 72%, transparent 73%),
+        conic-gradient(from -28deg, rgba(47, 111, 115, 0.86) 0deg 68deg, rgba(191, 107, 69, 0.82) 68deg 122deg, rgba(49, 95, 140, 0.82) 122deg 178deg, rgba(47, 111, 115, 0.55) 178deg 230deg, rgba(191, 107, 69, 0.42) 230deg 294deg, rgba(49, 95, 140, 0.58) 294deg 360deg);
+      border: 1px solid #d7e5df;
+      overflow: hidden;
+    }
+
+    .radar::after {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .radar-center {
+      position: absolute;
+      inset: 61px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--panel);
+      color: var(--green-deep);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.25;
+      box-shadow: 0 8px 22px rgba(36, 48, 57, 0.12);
+    }
+
+    .score-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 86px 1fr 36px;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .score-bar {
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf1ee;
+    }
+
+    .score-fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+    }
+
+    .journey {
+      display: grid;
+      gap: 12px;
+    }
+
+    .journey-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: #fbfcfa;
+      border: 1px solid var(--line);
+    }
+
+    .journey-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-weight: 900;
+    }
+
+    .journey-step strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--text);
+    }
+
+    .journey-step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .phone-demo {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      background: #243039;
+      box-shadow: var(--shadow);
+    }
+
+    .phone-screen {
+      border-radius: 14px;
+      background: #fbfcfa;
+      padding: 16px;
+      min-height: 214px;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .task-title {
+      margin-bottom: 14px;
+      font-size: 20px;
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .task-cell {
+      min-height: 66px;
+      padding: 10px;
+      border-radius: var(--radius);
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 13px;
+    }
+
+    .task-cell strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .scene-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .scene-card {
+      position: relative;
+      min-height: 132px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 16px;
+    }
+
+    .scene-card::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(47, 111, 115, 0.16);
+    }
+
+    .scene-card::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      bottom: 29px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--orange-soft);
+      border: 1px solid rgba(191, 107, 69, 0.22);
+    }
+
+    .scene-card strong,
+    .scene-card span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .scene-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .scene-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -310,11 +568,26 @@
     }
 
     .flow-step {
+      position: relative;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 18px;
       min-height: 132px;
+    }
+
+    .flow-step::before {
+      content: attr(data-step);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .flow-step strong {
@@ -382,8 +655,18 @@
 
       .grid,
       .grid.two,
-      .flow {
+      .flow,
+      .visual-section,
+      .scene-strip {
         grid-template-columns: 1fr;
+      }
+
+      .capability-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .radar {
+        margin: 0 auto;
       }
 
       .section-title {
@@ -492,6 +775,140 @@
       </div>
     </section>
 
+    <section>
+      <div class="section-title">
+        <h2>项目图示</h2>
+        <p>把家庭训练从“凭感觉”变成“看得见的能力画像、做得到的每日任务”。</p>
+      </div>
+
+      <div class="visual-section">
+        <div class="visual-panel">
+          <div class="panel-head">
+            <h3>孩子能力画像示意</h3>
+            <span class="panel-kicker">评估后生成</span>
+          </div>
+          <div class="capability-visual">
+            <div class="radar" aria-hidden="true">
+              <div class="radar-center">L0-L5<br>画像</div>
+            </div>
+            <div class="score-list" aria-label="能力画像示意">
+              <div class="score-row">
+                <span>社交能力</span>
+                <div class="score-bar"><span class="score-fill" style="width: 46%"></span></div>
+                <strong>L2</strong>
+              </div>
+              <div class="score-row">
+                <span>语言能力</span>
+                <div class="score-bar"><span class="score-fill" style="width: 58%"></span></div>
+                <strong>L3</strong>
+              </div>
+              <div class="score-row">
+                <span>认知能力</span>
+                <div class="score-bar"><span class="score-fill" style="width: 66%"></span></div>
+                <strong>L3</strong>
+              </div>
+              <div class="score-row">
+                <span>生活自理</span>
+                <div class="score-bar"><span class="score-fill" style="width: 38%"></span></div>
+                <strong>L2</strong>
+              </div>
+              <div class="score-row">
+                <span>情绪行为</span>
+                <div class="score-bar"><span class="score-fill" style="width: 52%"></span></div>
+                <strong>L3</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-panel">
+          <div class="panel-head">
+            <h3>从评估到训练闭环</h3>
+            <span class="panel-kicker">家庭可执行</span>
+          </div>
+          <div class="journey">
+            <div class="journey-step">
+              <div class="journey-mark">1</div>
+              <div>
+                <strong>先看清当前水平</strong>
+                <span>用正式评估题判断能力点等级，而不是只看诊断标签。</span>
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-mark">2</div>
+              <div>
+                <strong>生成今天能做的任务</strong>
+                <span>把训练嵌入吃饭、洗漱、游戏、出门等生活场景。</span>
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-mark">3</div>
+              <div>
+                <strong>打卡记录真实过程</strong>
+                <span>记录时长、辅助程度、成功次数和情绪状态。</span>
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-mark">4</div>
+              <div>
+                <strong>复评后调整计划</strong>
+                <span>打卡只提示趋势，等级变化仍由正式复评确认。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-section" style="margin-top: 16px;">
+        <div class="visual-panel">
+          <div class="panel-head">
+            <h3>今日训练卡片示意</h3>
+            <span class="panel-kicker">手机端优先</span>
+          </div>
+          <div class="phone-demo">
+            <div class="phone-screen">
+              <div class="phone-top">
+                <span>今日任务</span>
+                <span>社交能力 L2</span>
+              </div>
+              <div class="task-title">吹泡泡等待眼神接触</div>
+              <div class="task-grid">
+                <div class="task-cell"><strong>场景</strong>亲子游戏</div>
+                <div class="task-cell"><strong>动作</strong>暂停并等待</div>
+                <div class="task-cell"><strong>目标</strong>短暂看向家长</div>
+                <div class="task-cell"><strong>记录</strong>尝试 / 成功 / 辅助</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-panel">
+          <div class="panel-head">
+            <h3>家庭生活训练入口</h3>
+            <span class="panel-kicker">随时可练</span>
+          </div>
+          <div class="scene-strip">
+            <div class="scene-card">
+              <strong>吃饭</strong>
+              <span>等待、选择、表达需要</span>
+            </div>
+            <div class="scene-card">
+              <strong>洗漱</strong>
+              <span>模仿、步骤、生活自理</span>
+            </div>
+            <div class="scene-card">
+              <strong>游戏</strong>
+              <span>轮流、眼神、共同注意</span>
+            </div>
+            <div class="scene-card">
+              <strong>出门</strong>
+              <span>规则、情绪、泛化应用</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="why">
       <div class="section-title">
         <h2>为什么想做这个产品</h2>
@@ -532,23 +949,23 @@
       </div>
 
       <div class="flow">
-        <div class="flow-step">
+        <div class="flow-step" data-step="01">
           <strong>自我评估</strong>
           <span>家长在家随时完成能力观察和评估，了解孩子细化能力水平。</span>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-step="02">
           <strong>能力画像</strong>
           <span>量化孩子各项能力，看到短板、长处和当前训练优先级。</span>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-step="03">
           <strong>AI 计划</strong>
           <span>根据家庭作息和可接受强度，生成生活化训练计划。</span>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-step="04">
           <strong>每日打卡</strong>
           <span>记录训练时长、辅助程度、完成情况和孩子状态。</span>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-step="05">
           <strong>定期复评</strong>
           <span>通过复评调整计划，形成评估、训练、记录、再评估的闭环。</span>
         </div>
