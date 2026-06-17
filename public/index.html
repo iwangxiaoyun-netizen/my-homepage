@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="一名自闭症孩子父亲正在尝试用 AI 开发自闭症家庭自我评估与家庭生活训练打卡计划产品。" />
+  <title>自闭症家庭训练计划｜个人主页</title>
+  <style>
+    :root {
+      --bg: #f7f8f4;
+      --panel: #ffffff;
+      --text: #243039;
+      --muted: #667085;
+      --line: #e3e7df;
+      --green: #2f6f73;
+      --green-deep: #214f53;
+      --green-soft: #e8f3ef;
+      --blue: #315f8c;
+      --orange: #bf6b45;
+      --orange-soft: #fff0e8;
+      --yellow-soft: #fff8df;
+      --shadow: 0 18px 40px rgba(36, 48, 57, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(227, 231, 223, 0.82);
+    }
+
+    .nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 850;
+      color: var(--green-deep);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 36px;
+      align-items: center;
+      padding: 72px 0 50px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 750;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 5.4vw, 58px);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      margin: 22px 0 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .button.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(36, 48, 57, 0.08);
+      border-color: rgba(47, 111, 115, 0.32);
+    }
+
+    .profile-card,
+    .story,
+    .contact {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      padding: 28px;
+    }
+
+    .avatar-wrap {
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #d7e5df;
+      background: linear-gradient(135deg, var(--green-soft), var(--orange-soft));
+      margin-bottom: 24px;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 8px;
+      font-size: 26px;
+    }
+
+    .profile-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 0;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .section-title p {
+      max-width: 560px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .story {
+      padding: 28px;
+    }
+
+    .story p {
+      margin-bottom: 16px;
+      color: #344054;
+    }
+
+    .story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .label {
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--green-deep);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .flow-step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      min-height: 132px;
+    }
+
+    .flow-step strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .flow-step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid #efe2bf;
+      background: var(--yellow-soft);
+      color: #67552a;
+      font-size: 14px;
+    }
+
+    .contact {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 8px;
+      font-size: 26px;
+    }
+
+    .contact p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 46px 0 28px;
+      }
+
+      .profile-card {
+        order: -1;
+      }
+
+      .grid,
+      .grid.two,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .section-title p {
+        margin-top: 8px;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .nav {
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .avatar-wrap {
+        width: 112px;
+        height: 112px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="page nav" aria-label="主导航">
+      <a class="brand" href="#">自闭症家庭训练计划</a>
+      <div class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#why">为什么做</a>
+        <a href="#product">产品设想</a>
+        <a href="#contact">联系我</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="about">
+      <div>
+        <span class="eyebrow">70后 / 编程零基础 / 自闭症孩子父亲</span>
+        <h1>我想做一个让自闭症家庭在家也能看清方向的训练工具。</h1>
+        <p class="hero-text">
+          随着 AI 的发展，我开始尝试把多年积累的自闭症资料、家庭训练经验和产品想法，整理成一款可以用于家庭自我评估、生活场景训练计划和每日打卡复盘的应用。
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#product">查看产品设想</a>
+          <a class="button" href="#contact">联系交流</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="个人信息">
+        <div class="avatar-wrap">
+          <img src="assets/avatar.jpg" alt="个人头像占位图" />
+        </div>
+        <h2>你的姓名</h2>
+        <p>自闭症孩子父亲 / AI 产品探索者 / 家庭训练计划实践者</p>
+        <div class="meta-list">
+          <span>背景：70后，编程零基础，正在借助 AI 学习产品开发</span>
+          <span>长期关注：自闭症家庭康复、家庭生活训练、能力评估</span>
+          <span>目标：让家长有方向、有计划、有记录、有信心</span>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>个人介绍</h2>
+        <p>这个主页不仅是个人展示，也是我正在做的产品项目说明。</p>
+      </div>
+
+      <div class="story">
+        <p>
+          我是一名自闭症孩子的父亲，也是一名编程零基础的普通家长。这个产品想法并不是突然出现的，而是我在陪伴孩子成长的过程中，反复感受到家庭训练的困难和空白后，一点点形成的。
+        </p>
+        <p>
+          过去很多年里，我收集了大量自闭症相关资料，也一直在思考：为什么医院做完那么多专业评估后，家长仍然不知道孩子每天到底该练什么？为什么机构和学校很重要，但家庭生活场景里的训练却常常没有系统计划？
+        </p>
+        <p>
+          AI 的出现让我看到一种新的可能：也许普通家长也可以借助 AI，把复杂资料整理成清晰的能力模型，把孩子的细化能力评估出来，再生成适合自己家庭作息和承受强度的训练计划。
+        </p>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="section-title">
+        <h2>为什么想做这个产品</h2>
+        <p>我看到的核心问题不是家长不努力，而是很多家庭不知道从哪里开始。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="label">问题 01</div>
+          <h3>诊断结果不等于训练计划</h3>
+          <p>
+            医院评估通常告诉家长是否属于自闭症、程度高低或谱系类型，但这些结论很难直接转化成每天可执行的家庭训练任务。
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">问题 02</div>
+          <h3>家庭生活训练缺少系统性</h3>
+          <p>
+            很多孩子由老人照看，家长也常常只能摸着石头过河。吃饭、洗漱、出门、游戏这些生活场景，其实都可以成为训练机会。
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">问题 03</div>
+          <h3>老师也需要时间了解孩子</h3>
+          <p>
+            孩子进入康复机构或特教学校后，老师往往也需要观察一到两个月才能全面了解情况，而自闭症家庭常常是在和时间赛跑。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="product">
+      <div class="section-title">
+        <h2>产品设想</h2>
+        <p>核心不是替代医生或老师，而是帮助家庭更早、更清楚、更持续地行动起来。</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <strong>自我评估</strong>
+          <span>家长在家随时完成能力观察和评估，了解孩子细化能力水平。</span>
+        </div>
+        <div class="flow-step">
+          <strong>能力画像</strong>
+          <span>量化孩子各项能力，看到短板、长处和当前训练优先级。</span>
+        </div>
+        <div class="flow-step">
+          <strong>AI 计划</strong>
+          <span>根据家庭作息和可接受强度，生成生活化训练计划。</span>
+        </div>
+        <div class="flow-step">
+          <strong>每日打卡</strong>
+          <span>记录训练时长、辅助程度、完成情况和孩子状态。</span>
+        </div>
+        <div class="flow-step">
+          <strong>定期复评</strong>
+          <span>通过复评调整计划，形成评估、训练、记录、再评估的闭环。</span>
+        </div>
+      </div>
+
+      <div class="note">
+        说明：这个产品不替代医院诊断、医生建议或专业康复机构服务。它希望补足的是家庭生活训练场景中的评估、计划、记录和复盘。
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>擅长与积累</h2>
+        <p>虽然我不是程序员出身，但我长期积累了家庭视角下的问题、资料和真实需求。</p>
+      </div>
+
+      <div class="tag-list">
+        <span class="tag">自闭症家庭训练观察</span>
+        <span class="tag">资料整理与知识库建设</span>
+        <span class="tag">家庭生活场景拆解</span>
+        <span class="tag">AI 工具协作</span>
+        <span class="tag">产品构想与流程设计</span>
+        <span class="tag">家长视角需求分析</span>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="section-title">
+        <h2>作品 / 案例</h2>
+        <p>这里可以放正在推进的项目，也可以作为未来产品介绍页的基础。</p>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <div class="label">项目 01</div>
+          <h3>自闭症家庭自我评估系统</h3>
+          <p>
+            通过能力领域、能力点和等级体系，帮助家长看清孩子在社交、语言、认知、生活自理等方面的具体水平。
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">项目 02</div>
+          <h3>家庭生活训练打卡计划</h3>
+          <p>
+            把训练放进日常生活中，例如吃饭、洗漱、游戏、出门和亲子互动，让家长每天知道该做什么、怎么记录、何时复评。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2>联系方式</h2>
+          <p>
+            如果你也是自闭症孩子家长、特教老师、康复从业者，或对 AI 辅助家庭训练感兴趣，欢迎交流。
+          </p>
+        </div>
+        <div class="contact-links">
+          <a class="button primary" href="mailto:hello@example.com">发送邮件</a>
+          <button class="button" type="button" id="copyEmail">复制邮箱</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> 你的姓名。这个页面可直接部署到 Cloudflare Pages。
+  </footer>
+
+  <script>
+    const email = "hello@example.com";
+    const year = document.getElementById("year");
+    const copyEmail = document.getElementById("copyEmail");
+
+    year.textContent = new Date().getFullYear();
+
+    copyEmail.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(email);
+        this.textContent = "已复制";
+        setTimeout(() => {
+          this.textContent = "复制邮箱";
+        }, 1400);
+      } catch (error) {
+        window.location.href = "mailto:" + email;
+      }
+    });
+  </script>
+</body>
+</html>
